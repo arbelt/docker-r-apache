@@ -4,7 +4,7 @@
 if [ "$(id -u)" -eq 0 ]; then
     echo "Stepping down to www-data..."
     # allow stdout/stderr to be accessible after stepdown
-    chmod o+w /dev/{stdout,sterr}
+    chmod o+w /dev/{stdout,stderr}
     exec gosu www-data "${BASH_SOURCE}" "$@"
 fi
 
